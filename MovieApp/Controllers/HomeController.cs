@@ -24,6 +24,11 @@ namespace MovieApp.Controllers
             return View();
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
         /*public IActionResult Index()
         {
             var movies = _movieService.Get();
