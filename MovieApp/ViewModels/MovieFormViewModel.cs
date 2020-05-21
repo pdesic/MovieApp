@@ -25,7 +25,7 @@ namespace MovieApp.ViewModels
         public MovieFormViewModel()
         {
             ObjectId id = ObjectId.GenerateNewId();
-
+              
             Id = id.ToString();
         }
 
