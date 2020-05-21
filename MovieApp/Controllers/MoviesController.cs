@@ -5,16 +5,19 @@ using System.Threading.Tasks;
 using MovieApp.Models;
 using MovieApp.Services;
 using Microsoft.AspNetCore.Mvc;
+using MovieApp.ViewModels;
 
 namespace MovieApp.Controllers
 {
     public class MoviesController : Controller
     {
         private readonly MovieService _movieService;
+        private readonly GenreService _genreService;
 
-        public MoviesController(MovieService movieService)
+        public MoviesController(MovieService movieService, GenreService genreService)
         {
             _movieService = movieService;
+            _genreService = genreService;
         }
         public ActionResult<Movie> Index()
         {
@@ -25,7 +28,12 @@ namespace MovieApp.Controllers
 
         public ViewResult CreateForm()
         {
-            return View("");
+
+            var viewModel = new MovieFormViewModel
+            {
+                Genres = _genreService.Get()
+            };
+            return View("",viewModel);
         }
 
         public ActionResult UpdateForm(string id)
@@ -37,7 +45,10 @@ namespace MovieApp.Controllers
                 return NotFound();
             }
 
-
+            var viewModel = new MovieFormViewModel(movie)
+            {
+                Genres = _genreService.Get()
+            };
 
             return View("");
         }
