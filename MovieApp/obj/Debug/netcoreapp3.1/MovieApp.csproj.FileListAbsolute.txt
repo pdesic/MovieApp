@@ -168,7 +168,6 @@ C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netc
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
@@ -182,3 +181,6 @@ C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netc
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\MovieApp.dll
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\MovieApp.pdb
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\MovieApp.genruntimeconfig.cache
+C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutHome.cshtml.g.cs
+C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Movies\MovieForm.cshtml.g.cs
