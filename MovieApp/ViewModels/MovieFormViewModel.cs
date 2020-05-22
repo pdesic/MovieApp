@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Localization.Internal;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MovieApp.Models;
@@ -18,7 +19,7 @@ namespace MovieApp.ViewModels
         public string Id { get; set; }
         public string Name { get; set; }
         public string ReleaseDate { get; set; }
-        public Genre Genre { get; set; }
+        public string[] Genre { get; set; }
         public string MovieTrailerUrl { get; set; }
         public string ImagePath { get; set; }
 
