@@ -25,19 +25,20 @@ namespace MovieApp.Controllers
 
             return View(movies);
         }
-
-        public ViewResult CreateForm()
+        public ActionResult<Genre> CreateForm()
         {
 
-            var viewModel = new MovieFormViewModel
-            {
-                Genres = _genreService.Get()
-            };
+             //var viewModel = new MovieFormViewModel
+             //{
+             //    Genres = _genreService.Get()
+             //};    
+            var genres = _genreService.GetFirst();
 
-            return View("",viewModel);
-        }
+            return View(genres);
 
-        public ActionResult UpdateForm(string id)
+    }
+
+    public ActionResult UpdateForm(string id)
         {
             var movie = _movieService.Get(id);
 
@@ -46,12 +47,13 @@ namespace MovieApp.Controllers
                 return NotFound();
             }
 
-            var viewModel = new MovieFormViewModel(movie)
-            {
-                Genres = _genreService.Get()
-            };
+            // var viewModel = new MovieFormViewModel(movie)
+            // {
+            //     Genres = _genreService.Get()
+            // };
 
-            return View("");
+            return View(movie);
+
         }
 
         [HttpPost]

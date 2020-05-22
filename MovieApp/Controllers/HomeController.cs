@@ -43,11 +43,6 @@ namespace MovieApp.Controllers
             _movieService = movieService;
         }*/
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
