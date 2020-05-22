@@ -46,6 +46,7 @@ namespace MovieApp
             services.AddRazorPages();
 
             services.AddSingleton<MovieService>();
+            services.AddSingleton<GenreService>();
             services.AddSingleton<UserService>();
         }
 
