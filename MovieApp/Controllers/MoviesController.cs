@@ -33,6 +33,7 @@ namespace MovieApp.Controllers
             {
                 Genres = _genreService.Get()
             };
+
             return View("",viewModel);
         }
 
