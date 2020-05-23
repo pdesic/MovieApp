@@ -19,6 +19,8 @@ namespace MovieApp.Controllers
             _movieService = movieService;
             _genreService = genreService;
         }
+
+        [HttpGet]
         public ActionResult<Movie> Index()
         {
             var movies = _movieService.Get();
@@ -82,7 +84,7 @@ namespace MovieApp.Controllers
             return RedirectToAction("Index","Movies");
         }
 
-        [HttpPost]
+        [HttpPut]
         public ActionResult<Movie> Update(string id, Movie movieIn)
         {
             var updateMovie = _movieService.Get(id);
@@ -97,7 +99,7 @@ namespace MovieApp.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
-        [HttpPost]
+        [HttpDelete]
         public ActionResult<Movie> Delete(string id)
         {
             var deleteMovie = _movieService.Get(id);
