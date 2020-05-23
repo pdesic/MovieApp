@@ -69,3 +69,19 @@
         </ul>
     </nav>
 </div>
+
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+              method: "GET",
+              url: "http://localhost:5000/api/movies"
+            })
+              .done(function( data ) {
+                console.log(data);
+              });
+        })
+    </script>
+}

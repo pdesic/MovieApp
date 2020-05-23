@@ -2,6 +2,7 @@
 using MovieApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Cors;
 
 namespace MovieApp.Controllers.Api
 {
