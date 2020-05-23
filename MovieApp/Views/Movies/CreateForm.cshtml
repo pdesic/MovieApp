@@ -1,0 +1,78 @@
+﻿@model MovieApp.Models.Genre
+
+@{
+    Layout = "_Layout";
+}
+
+@section Style
+{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+    <style>
+        .select2 {
+            width: 100%!important;
+        }
+        
+    </style>
+}
+<div class="row">
+    <div class="col-lg-8 offset-lg-2 col-12">
+        <div class="card mt-5">
+            <div class="card-header">
+                Create new Movie
+            </div>
+            <div class="card-body">
+                <form asp-controller="Movies" asp-action="Create" method="post">
+                    <div class="form-group">
+                        <label for="movie-name">Movie name</label>
+                        <input type="text" class="form-control" id="movie-name" name="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="realese-date">Realese date</label>
+                        <input type="text" class="flatpickr flatpickr-input form-control" id="realese-date" name="ReleaseDate" style="background-color:#fff;">
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Select genre</label>
+                        <select class="form-control select-genre" id="genre" name="Genre[]" multiple="multiple">
+                            @foreach (var genre in @Model.Genres)
+                            {
+                                <option value="@genre">@genre</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="url-trailer">Youtube url trailer</label>
+                        <input type="text" class="form-control" id="url-trailer" name="MovieTrailerUrl" placeholder="Example: https://www.youtube.com/watch?v=VyHV0BRtdxo">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Import movie image</label>
+                        <input type="file" class="form-control-file" id="ImagePath">
+                    </div>
+
+                    <button class="btn btn-success">Add movie</button>
+                    
+                    
+                    <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+@section Scripts
+{
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".flatpickr").flatpickr();
+
+            $('.select-genre').select2();
+        });
+    </script>
+}

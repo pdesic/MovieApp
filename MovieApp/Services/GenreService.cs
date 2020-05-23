@@ -21,5 +21,10 @@ namespace MovieApp.Services
 
         public List<Genre> Get() =>
             _genres.Find(genre => true).ToList();
+        
+        
+        public Genre GetFirst() =>
+            _genres.Find(genre => true).FirstOrDefault();
+
     }
 }

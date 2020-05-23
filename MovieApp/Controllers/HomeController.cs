@@ -24,6 +24,11 @@ namespace MovieApp.Controllers
             return View();
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
         /*public IActionResult Index()
         {
             var movies = _movieService.Get();
@@ -37,11 +42,6 @@ namespace MovieApp.Controllers
         {
             _movieService = movieService;
         }*/
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

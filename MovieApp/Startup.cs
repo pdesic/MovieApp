@@ -45,7 +45,9 @@ namespace MovieApp
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+
             services.AddSingleton<MovieService>();
+            services.AddSingleton<GenreService>();
             services.AddSingleton<UserService>();
         }
 
@@ -65,6 +67,8 @@ namespace MovieApp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
+            app.UseStatusCodePages();
 
             app.UseRouting();
 
