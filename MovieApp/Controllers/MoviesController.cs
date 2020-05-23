@@ -26,6 +26,11 @@ namespace MovieApp.Controllers
             return View(movies);
         }
 
+        public ActionResult Details(string id)
+        {
+            return Content("That is movie ID = " + id.ToString() + "It's work AAAAAA");
+        }
+
         public ActionResult<Genre> CreateForm()
         {
 

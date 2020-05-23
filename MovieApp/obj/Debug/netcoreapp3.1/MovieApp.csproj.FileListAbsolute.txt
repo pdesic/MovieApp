@@ -186,3 +186,4 @@ C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netc
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Movies\Index.cshtml.g.cs
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Movies\CreateForm.cshtml.g.cs
 C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Movies\UpdateForm.cshtml.g.cs
+C:\Users\Marko\source\repos\6-Semestar\MovieApp\MovieApp\MovieApp\obj\Debug\netcoreapp3.1\Razor\Views\Movies\Details.cshtml.g.cs
