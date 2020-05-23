@@ -34,13 +34,15 @@ namespace MovieApp.Controllers
         public ActionResult<Genre> CreateForm()
         {
 
-            // var viewModel = new MovieFormViewModel
-            // {
-            //     Genres = _genreService.Get()
-            // };    
-            var genres = _genreService.GetFirst();
+            var viewModel = new MovieFormViewModel
+            {
+                Genre = _genreService.GetFirst(),
+                Movie = new Movie()
+            };    
+            // var genres = _genreService.GetFirst();
+            // var movies = new Movie();
 
-            return View(genres);
+            return View(viewModel);
         }
 
         public ActionResult UpdateForm(string id)
@@ -61,8 +63,20 @@ namespace MovieApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult<Movie> Create(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel
+                {
+                    Genre = _genreService.GetFirst(),
+                    Movie = new Movie()
+                };   
+
+                return View("CreateForm", viewModel);
+            }
+            
             _movieService.Create(movie);
 
             return RedirectToAction("Index","Movies");
