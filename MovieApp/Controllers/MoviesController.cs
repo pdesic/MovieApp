@@ -27,22 +27,13 @@ namespace MovieApp.Controllers
 
             return View(movies);
         }
-<<<<<<< HEAD
-        public ActionResult<Genre> CreateForm()
-        {
 
-             //var viewModel = new MovieFormViewModel
-             //{
-             //    Genres = _genreService.Get()
-             //};    
-            var genres = _genreService.GetFirst();
 
-            return View(genres);
-=======
 
         public ActionResult Details(string id)
         {
-            return Content("That is movie ID = " + id.ToString() + "It's work AAAAAA");
+            var movie = _movieService.Get(id);
+            return View(movie);
         }
 
         public ActionResult<Genre> CreateForm()
@@ -53,14 +44,12 @@ namespace MovieApp.Controllers
                 Genre = _genreService.GetFirst(),
                 Movie = new Movie()
             };    
-            // var genres = _genreService.GetFirst();
-            // var movies = new Movie();
 
             return View(viewModel);
         }
->>>>>>> 716f807abf4ac51678b3129cca3271cc896d2fca
 
-    }
+
+    
 
     public ActionResult UpdateForm(string id)
         {
@@ -71,10 +60,11 @@ namespace MovieApp.Controllers
                 return NotFound();
             }
 
-            // var viewModel = new MovieFormViewModel(movie)
-            // {
-            //     Genres = _genreService.Get()
-            // };
+            var viewModel = new MovieFormViewModel()
+            {
+                Genre = _genreService.GetFirst(),
+                Movie = movie
+            };
 
             return View(movie);
 
@@ -101,6 +91,7 @@ namespace MovieApp.Controllers
         }
 
         [HttpPut]
+        [ValidateAntiForgeryToken]
         public ActionResult<Movie> Update(string id, Movie movieIn)
         {
             var updateMovie = _movieService.Get(id);
@@ -116,6 +107,7 @@ namespace MovieApp.Controllers
         }
 
         [HttpDelete]
+        [ValidateAntiForgeryToken]
         public ActionResult<Movie> Delete(string id)
         {
             var deleteMovie = _movieService.Get(id);

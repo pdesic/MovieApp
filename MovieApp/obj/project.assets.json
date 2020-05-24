@@ -8162,11 +8162,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pc\\Desktop\\Fax\\RVAS\\Grupa3\\MovieApp\\MovieApp\\MovieApp\\MovieApp.csproj",
+      "projectUniqueName": "C:\\Users\\Pc\\Desktop\\Fax\\RVAS\\Grupa3\\MovieApp\\MovieApp\\MovieApp.csproj",
       "projectName": "MovieApp",
-      "projectPath": "C:\\Users\\Pc\\Desktop\\Fax\\RVAS\\Grupa3\\MovieApp\\MovieApp\\MovieApp\\MovieApp.csproj",
+      "projectPath": "C:\\Users\\Pc\\Desktop\\Fax\\RVAS\\Grupa3\\MovieApp\\MovieApp\\MovieApp.csproj",
       "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pc\\Desktop\\Fax\\RVAS\\Grupa3\\MovieApp\\MovieApp\\MovieApp\\obj\\",
+      "outputPath": "C:\\Users\\Pc\\Desktop\\Fax\\RVAS\\Grupa3\\MovieApp\\MovieApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
