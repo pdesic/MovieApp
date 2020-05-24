@@ -34,13 +34,13 @@ namespace MovieApp.Controllers.Api
             return movie;
         }
 
-        [HttpPost]
-        public ActionResult<Movie> Create(Movie movie)
-        {
-            _movieService.Create(movie);
+        //[HttpPost]
+        //public ActionResult<Movie> Create(Movie movie)
+        //{
+        //    _movieService.Create(movie);
 
-            return CreatedAtRoute("GetMovie", new { id = movie.Id.ToString() }, movie);
-        }
+        //    return CreatedAtRoute("GetMovie", new { id = movie.Id.ToString() }, movie);
+        //}
 
         [HttpPut("{id:length(24)}")]
         public IActionResult Update(string id, Movie movieIn)

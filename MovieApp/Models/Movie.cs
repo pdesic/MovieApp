@@ -20,7 +20,7 @@ namespace MovieApp.Models
         [DataType(DataType.Date)]
         [Display(Name = "Release date")]
         public string ReleaseDate { get; set; }
-        [Required]
+        //[Required]
         public string[] Genre { get; set; }
         [Display(Name = "Youtube url trailer")]
         [Required]
