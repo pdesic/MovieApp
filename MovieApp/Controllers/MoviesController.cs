@@ -19,12 +19,15 @@ namespace MovieApp.Controllers
             _movieService = movieService;
             _genreService = genreService;
         }
+
+        [HttpGet]
         public ActionResult<Movie> Index()
         {
             var movies = _movieService.Get();
 
             return View(movies);
         }
+<<<<<<< HEAD
         public ActionResult<Genre> CreateForm()
         {
 
@@ -35,6 +38,27 @@ namespace MovieApp.Controllers
             var genres = _genreService.GetFirst();
 
             return View(genres);
+=======
+
+        public ActionResult Details(string id)
+        {
+            return Content("That is movie ID = " + id.ToString() + "It's work AAAAAA");
+        }
+
+        public ActionResult<Genre> CreateForm()
+        {
+
+            var viewModel = new MovieFormViewModel
+            {
+                Genre = _genreService.GetFirst(),
+                Movie = new Movie()
+            };    
+            // var genres = _genreService.GetFirst();
+            // var movies = new Movie();
+
+            return View(viewModel);
+        }
+>>>>>>> 716f807abf4ac51678b3129cca3271cc896d2fca
 
     }
 
@@ -57,14 +81,26 @@ namespace MovieApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult<Movie> Create(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel
+                {
+                    Genre = _genreService.GetFirst(),
+                    Movie = new Movie()
+                };   
+
+                return View("CreateForm", viewModel);
+            }
+            
             _movieService.Create(movie);
 
             return RedirectToAction("Index","Movies");
         }
 
-        [HttpPost]
+        [HttpPut]
         public ActionResult<Movie> Update(string id, Movie movieIn)
         {
             var updateMovie = _movieService.Get(id);
@@ -79,7 +115,7 @@ namespace MovieApp.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
-        [HttpPost]
+        [HttpDelete]
         public ActionResult<Movie> Delete(string id)
         {
             var deleteMovie = _movieService.Get(id);

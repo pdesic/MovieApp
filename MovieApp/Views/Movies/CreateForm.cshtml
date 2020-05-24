@@ -1,5 +1,4 @@
-﻿@model MovieApp.Models.Genre
-
+﻿@model MovieApp.ViewModels.MovieFormViewModel
 @{
     Layout = "_Layout";
 }
@@ -25,25 +24,28 @@
             <div class="card-body">
                 <form asp-controller="Movies" asp-action="Create" method="post">
                     <div class="form-group">
-                        <label for="movie-name">Movie name</label>
-                        <input type="text" class="form-control" id="movie-name" name="Name">
+                        <label asp-for="Movie.Name"></label>
+                        <input class="form-control" asp-for="Movie.Name">
+                        <span asp-validation-for="Movie.Name" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="realese-date">Realese date</label>
-                        <input type="text" class="flatpickr flatpickr-input form-control" id="realese-date" name="ReleaseDate" style="background-color:#fff;">
+                        <label asp-for="Movie.ReleaseDate"></label>
+                        <input class="flatpickr flatpickr-input form-control" asp-for="Movie.ReleaseDate" style="background-color:#fff;">
+                        <span asp-validation-for="Movie.ReleaseDate" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label for="genre">Select genre</label>
                         <select class="form-control select-genre" id="genre" name="Genre[]" multiple="multiple">
-                            @foreach (var genre in @Model.Genres)
+                            @foreach (var genre in @Model.Genre.Genres)
                             {
                                 <option value="@genre">@genre</option>
                             }
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="url-trailer">Youtube url trailer</label>
-                        <input type="text" class="form-control" id="url-trailer" name="MovieTrailerUrl" placeholder="Example: https://www.youtube.com/watch?v=VyHV0BRtdxo">
+                        <label asp-for="Movie.MovieTrailerUrl"></label>
+                        <input class="form-control" asp-for="Movie.MovieTrailerUrl" placeholder="Example: https://www.youtube.com/watch?v=VyHV0BRtdxo">
+                        <span asp-validation-for="Movie.MovieTrailerUrl" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label for="image">Import movie image</label>
@@ -53,7 +55,7 @@
                     <button class="btn btn-success">Add movie</button>
                     
                     
-                    <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
+                    <input name="__RequestVerificationToken" type="hidden" value="">
                 </form>
             </div>
         </div>
@@ -65,6 +67,8 @@
 
 @section Scripts
 {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 

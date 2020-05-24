@@ -45,6 +45,14 @@ namespace MovieApp
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
+
             services.AddSingleton<MovieService>();
             services.AddSingleton<GenreService>();
             services.AddSingleton<UserService>();
@@ -66,9 +74,14 @@ namespace MovieApp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
+            app.UseStatusCodePages();
 
             app.UseRouting();
 
+            app.UseCors("MyPolicy");
+
+            
             app.UseAuthentication();
             app.UseAuthorization();
 
