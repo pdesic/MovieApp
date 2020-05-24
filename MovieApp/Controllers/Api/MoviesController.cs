@@ -42,20 +42,20 @@ namespace MovieApp.Controllers.Api
         //    return CreatedAtRoute("GetMovie", new { id = movie.Id.ToString() }, movie);
         //}
 
-        [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, Movie movieIn)
-        {
-            var movie = _movieService.Get(id);
+        //[HttpPut("{id:length(24)}")]
+        //public IActionResult Update(string id, Movie movieIn)
+        //{
+        //    var movie = _movieService.Get(id);
 
-            if (movie == null)
-            {
-                return NotFound();
-            }
+        //    if (movie == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _movieService.Update(id, movieIn);
+        //    _movieService.Update(id, movieIn);
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
