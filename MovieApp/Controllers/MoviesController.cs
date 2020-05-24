@@ -60,13 +60,14 @@ namespace MovieApp.Controllers
             {
                 return NotFound();
             }
+            
+            var viewModel = new MovieFormViewModel
+            {
+                Genre = _genreService.GetFirst(),
+                Movie = movie
+            };    
 
-            // var viewModel = new MovieFormViewModel(movie)
-            // {
-            //     Genres = _genreService.Get()
-            // };
-
-            return View();
+            return View(viewModel);
         }
         
         [HttpPost]
@@ -94,6 +95,7 @@ namespace MovieApp.Controllers
                 ModelState.AddModelError("Movie.ImagePath", "Please upload image");
             }
             
+            // Check if has any validation error
             if (!ModelState.IsValid)
             {
                 var viewModel = new MovieFormViewModel
@@ -111,8 +113,9 @@ namespace MovieApp.Controllers
         }
 
 
-        [HttpPut]
-        public ActionResult<Movie> Update(string id, Movie movieIn)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(Movie movie, string id)
         {
             var updateMovie = _movieService.Get(id);
 
@@ -120,8 +123,10 @@ namespace MovieApp.Controllers
             {
                 return NotFound();
             }
+            
+            movie.Id = id;
 
-            _movieService.Update(id, movieIn);
+            _movieService.Update(id, movie);
 
             return RedirectToAction("Index", "Movies");
         }

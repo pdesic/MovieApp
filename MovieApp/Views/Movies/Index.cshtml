@@ -45,10 +45,10 @@
                                 @movie.Name
                             </a>
                         </p>
-                        <button type="button" class="btn btn-outline-secondary btn-block">
+                        <a asp-controller="Movies" asp-action="UpdateForm" asp-route-id="@movie.Id" class="btn btn-outline-secondary btn-block">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             Edit
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
