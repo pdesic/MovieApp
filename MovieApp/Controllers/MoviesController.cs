@@ -18,13 +18,11 @@ namespace MovieApp.Controllers
     {
         private readonly MovieService _movieService;
         private readonly GenreService _genreService;
-        private IHostingEnvironment _env;
 
-        public MoviesController(MovieService movieService, GenreService genreService, IHostingEnvironment environment)
+        public MoviesController(MovieService movieService, GenreService genreService)
         {
             _movieService = movieService;
             _genreService = genreService;
-            _env = environment;
         }
 
         [HttpGet]
@@ -115,8 +113,9 @@ namespace MovieApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update(Movie movie, string id)
+        public async Task<IActionResult> Update(Movie movie, string id, IFormFile image)
         {
+                        
             var updateMovie = _movieService.Get(id);
 
             if (updateMovie == null)
@@ -124,14 +123,47 @@ namespace MovieApp.Controllers
                 return NotFound();
             }
             
-            movie.Id = id;
+            // If image uploaded, make image name unique and store into "\wwwroot\images" folder,
+            // otherwise set validation error message
+            if (image != null && image.Length > 0)
+            {
+                string uniqueImageName = Guid.NewGuid().ToString() + "_" + image.FileName;
 
+                string imageFullPath = System.IO.Directory.GetCurrentDirectory() + @"\wwwroot\images\" + uniqueImageName;
+                
+                using (var stream = System.IO.File.Create(imageFullPath))
+                {
+                    await image.CopyToAsync(stream);
+                }
+
+                movie.ImagePath = uniqueImageName;
+            }
+            else
+            {
+                movie.ImagePath = updateMovie.Id;
+            }
+
+            
+            // Check if has any validation error
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel
+                {
+                    Genre = _genreService.GetFirst(),
+                    Movie = new Movie()
+                };   
+            
+                return View("UpdateForm", viewModel);
+            }
+            
+            
             _movieService.Update(id, movie);
 
             return RedirectToAction("Index", "Movies");
         }
 
-        [HttpDelete]
+        [HttpPost]
+        //TODO add TOKEN
         public ActionResult<Movie> Delete(string id)
         {
             var deleteMovie = _movieService.Get(id);
@@ -141,7 +173,7 @@ namespace MovieApp.Controllers
                 return NotFound();
             }
 
-            _movieService.Remove(deleteMovie.Id);
+            _movieService.Remove(id);
 
             return RedirectToAction("Index", "Movies");
         }
