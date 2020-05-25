@@ -26,6 +26,7 @@ namespace MovieApp.Models
         [Required]
         [Url]
         public string MovieTrailerUrl { get; set; }
+        [Display(Name = "Import movie image")]
         public string ImagePath { get; set; }
     }
 }
