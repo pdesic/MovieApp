@@ -3,12 +3,15 @@ using MovieApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Cors;
+using System;
+using System.Net.Http;
+using System.Net;
 
 namespace MovieApp.Controllers.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MoviesController : ControllerBase
+    public class MoviesController : Controller
     {
         private readonly MovieService _movieService;
 
@@ -57,19 +60,35 @@ namespace MovieApp.Controllers.Api
         //     return NoContent();
         // }
         //
-        // [HttpDelete("{id:length(24)}")]
-        // public IActionResult Delete(string id)
-        // {
-        //     var movie = _movieService.Get(id);
-        //
-        //     if (movie == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //
-        //     _movieService.Remove(movie.Id);
-        //
-        //     return NoContent();
-        // }
+        [HttpDelete("{id:length(24)}")]
+        public IActionResult Delete(string id)
+        {
+            try
+            {
+                var movie = _movieService.Get(id);
+
+                if (movie == null)
+                {
+                    return NotFound();
+                }
+
+                _movieService.Remove(movie.Id);
+
+                return Json(new
+                {
+                    Message = "Movie deleted successfully",
+                    Code = 200
+                });
+            }
+
+            catch(Exception ex)
+            {
+                return Json(new
+                {
+                    Message = ex.Message,
+                    Code = 400
+                });
+            }
+        }
     }
 }

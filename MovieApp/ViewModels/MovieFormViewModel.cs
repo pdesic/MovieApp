@@ -14,9 +14,5 @@ namespace MovieApp.ViewModels
     {
         public Movie Movie { get; set; }
         public Genre Genre { get; set; }
-<<<<<<< HEAD
-
-=======
->>>>>>> 7b74fc708ab781795770b79a7376735e99fd0ff1
     }
 }

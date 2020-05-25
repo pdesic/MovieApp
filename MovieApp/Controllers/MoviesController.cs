@@ -49,11 +49,7 @@ namespace MovieApp.Controllers
                 Genre = _genreService.GetFirst(),
                 Movie = new Movie()
             };    
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 7b74fc708ab781795770b79a7376735e99fd0ff1
             return View(viewModel);
         }
 
@@ -75,18 +71,8 @@ namespace MovieApp.Controllers
                 Movie = movie
             };    
 
-<<<<<<< HEAD
-            var viewModel = new MovieFormViewModel()
-            {
-                Genre = _genreService.GetFirst(),
-                Movie = movie
-            };
-
-            return View(movie);
-
-=======
             return View(viewModel);
->>>>>>> 7b74fc708ab781795770b79a7376735e99fd0ff1
+
         }
         
         [HttpPost]
@@ -131,16 +117,13 @@ namespace MovieApp.Controllers
             return RedirectToAction("Index","Movies");
         }
 
-<<<<<<< HEAD
-        [HttpPut]
-        [ValidateAntiForgeryToken]
-        public ActionResult<Movie> Update(string id, Movie movieIn)
-=======
+
+
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(Movie movie, string id, IFormFile image)
->>>>>>> 7b74fc708ab781795770b79a7376735e99fd0ff1
         {
                         
             var updateMovie = _movieService.Get(id);
@@ -189,13 +172,10 @@ namespace MovieApp.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
-<<<<<<< HEAD
-        [HttpDelete]
+
+
         [ValidateAntiForgeryToken]
-=======
         [HttpPost]
-        //TODO add TOKEN
->>>>>>> 7b74fc708ab781795770b79a7376735e99fd0ff1
         public ActionResult<Movie> Delete(string id)
         {
             var deleteMovie = _movieService.Get(id);
