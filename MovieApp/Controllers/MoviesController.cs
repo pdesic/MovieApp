@@ -106,7 +106,7 @@ namespace MovieApp.Controllers
             }
             
             _movieService.Create(movie);
-            
+
             return RedirectToAction("Index","Movies");
         }
 
