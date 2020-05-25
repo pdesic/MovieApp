@@ -23,6 +23,9 @@
             </div>
             <div class="card-body">
                 <form asp-controller="Movies" asp-action="Update" asp-route-id="@Model.Movie.Id" method="post" enctype="multipart/form-data">
+                    <input class="form-control" type="hidden" asp-for="Movie.Id">
+
+                    
                     <div class="form-group">
                         <label asp-for="Movie.Name"></label>
                         <input class="form-control" asp-for="Movie.Name">
@@ -55,9 +58,9 @@
                         <span asp-validation-for="Movie.ImagePath" class="text-danger"></span>
                     </div>
 
-                    <button class="btn btn-success">Add movie</button>
-                    
-                    
+                    <button class="btn btn-success">Update movie</button>
+
+
                     <input name="__RequestVerificationToken" type="hidden" value="">
                 </form>
             </div>
