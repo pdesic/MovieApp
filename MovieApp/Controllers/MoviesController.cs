@@ -11,9 +11,11 @@ using MovieApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MovieApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MovieApp.Controllers
 {
+    [Authorize]
     public class MoviesController : Controller
     {
         private readonly MovieService _movieService;
@@ -26,6 +28,7 @@ namespace MovieApp.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult<Movie> Index()
         {
             var movies = _movieService.Get();
@@ -33,11 +36,14 @@ namespace MovieApp.Controllers
             return View(movies);
         }
 
+        [HttpGet]
         public ActionResult Details(string id)
         {
-            return Content("That is movie ID = " + id.ToString() + "It's work AAAAAA");
+            var movie = _movieService.Get(id);
+            return View(movie);
         }
 
+        [HttpGet]
         public ActionResult<Genre> CreateForm()
         {
 
@@ -46,10 +52,11 @@ namespace MovieApp.Controllers
                 Genre = _genreService.GetFirst(),
                 Movie = new Movie()
             };    
-            
+
             return View(viewModel);
         }
 
+        [HttpGet]
         public ActionResult UpdateForm(string id)
         {
             var movie = _movieService.Get(id);
@@ -66,6 +73,7 @@ namespace MovieApp.Controllers
             };    
 
             return View(viewModel);
+
         }
         
         [HttpPost]
@@ -109,6 +117,7 @@ namespace MovieApp.Controllers
             
             return RedirectToAction("Index","Movies");
         }
+
 
 
         [HttpPost]
@@ -162,8 +171,10 @@ namespace MovieApp.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
-        [HttpPost]
-        //TODO add TOKEN
+
+
+        [HttpPost]        
+        [ValidateAntiForgeryToken]
         public ActionResult<Movie> Delete(string id)
         {
             var deleteMovie = _movieService.Get(id);
