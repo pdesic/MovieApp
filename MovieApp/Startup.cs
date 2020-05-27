@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using MovieApp.Models;
 using MovieApp.Services;
+using MongoDB.Bson;
 
 namespace MovieApp
 {
@@ -40,9 +41,22 @@ namespace MovieApp
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+            services.AddIdentity<User, Role>()
+                .AddMongoDbStores<User, Role, ObjectId>
+                (
+                    "mongodb+srv://pdesic17:Pass.123@movieprojectcluster-zbe8i.mongodb.net/test?retryWrites=true&w=majority",
+                    "MovieAppDB"
+                )
+                .AddDefaultTokenProviders();
+
+
+
             services.AddControllersWithViews();
+
             services.AddRazorPages();
 
             

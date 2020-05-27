@@ -11,9 +11,11 @@ using MovieApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MovieApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MovieApp.Controllers
 {
+    [Authorize]
     public class MoviesController : Controller
     {
         private readonly MovieService _movieService;
@@ -25,7 +27,10 @@ namespace MovieApp.Controllers
             _genreService = genreService;
         }
 
+
+
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult<Movie> Index()
         {
             var movies = _movieService.Get();
@@ -35,12 +40,14 @@ namespace MovieApp.Controllers
 
 
 
+        [HttpGet]
         public ActionResult Details(string id)
         {
             var movie = _movieService.Get(id);
             return View(movie);
         }
 
+        [HttpGet]
         public ActionResult<Genre> CreateForm()
         {
 
@@ -55,8 +62,8 @@ namespace MovieApp.Controllers
 
 
     
-
-    public ActionResult UpdateForm(string id)
+        [HttpGet]
+        public ActionResult UpdateForm(string id)
         {
             var movie = _movieService.Get(id);
 
@@ -75,6 +82,8 @@ namespace MovieApp.Controllers
 
         }
         
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Movie movie, IFormFile image)
@@ -116,8 +125,6 @@ namespace MovieApp.Controllers
             
             return RedirectToAction("Index","Movies");
         }
-
-
 
 
 
@@ -174,8 +181,8 @@ namespace MovieApp.Controllers
 
 
 
+        [HttpPost]        
         [ValidateAntiForgeryToken]
-        [HttpPost]
         public ActionResult<Movie> Delete(string id)
         {
             var deleteMovie = _movieService.Get(id);
