@@ -25,7 +25,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69ea831c-798d-4767-aad9-546c681633a4" name="Default Changelist" comment="" />
+    <list default="true" id="69ea831c-798d-4767-aad9-546c681633a4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Views/Movies/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/Views/Movies/Index.cshtml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,6 +80,7 @@
     <setting file="file://$PROJECT_DIR$/MovieApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MovieApp/Data/ApplicationDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MovieApp/Views/Movies/CreateForm.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4A0E8814-DEB8-40F2-817A-211F96ECC092/68/UrlHelperExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MovieApp/Views/Movies/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MovieApp/Controllers/Api/MoviesController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,7 +89,6 @@
     <setting file="file://$PROJECT_DIR$/MovieApp/Models/Role.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MovieApp/Views/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MovieApp/Views/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///UpdateForm.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -104,15 +108,15 @@
         <option value="$PROJECT_DIR$/MovieApp/Services/MovieService.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Home/About.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Home/Index.cshtml" />
-        <option value="$PROJECT_DIR$/MovieApp/Controllers/Api/MoviesController.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Account/Login.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Account/Register.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Models/Movie.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Movies/CreateForm.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Movies/UpdateForm.cshtml" />
-        <option value="$PROJECT_DIR$/MovieApp/Views/Movies/Index.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Movies/Details.cshtml" />
+        <option value="$PROJECT_DIR$/MovieApp/Controllers/Api/MoviesController.cs" />
+        <option value="$PROJECT_DIR$/MovieApp/Views/Movies/Index.cshtml" />
       </list>
     </option>
   </component>
@@ -184,7 +188,8 @@
       <workItem from="1590324234226" duration="21901000" />
       <workItem from="1590361128618" duration="4558000" />
       <workItem from="1590426157555" duration="3501000" />
-      <workItem from="1590664801228" duration="7664000" />
+      <workItem from="1590664801228" duration="7960000" />
+      <workItem from="1590672830937" duration="7032000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589870394498</created>
@@ -327,11 +332,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="aa" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="0" width="701" height="824" key="#MovieApp" timestamp="1590664955274">
+    <state x="424" y="0" width="701" height="824" key="#MovieApp" timestamp="1590679898068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="424" y="0" width="701" height="824" key="#MovieApp/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590426182226" />
-    <state x="424" y="0" width="701" height="824" key="#MovieApp/0.0.1536.824@0.0.1536.824" timestamp="1590664955274" />
+    <state x="424" y="0" width="701" height="824" key="#MovieApp/0.0.1536.824@0.0.1536.824" timestamp="1590679898068" />
     <state x="576" y="201" key="#Web_Browsers" timestamp="1590061815190">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -352,30 +357,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1590266336522" />
-    <state width="1493" height="111" key="GridCell.Tab.0.bottom" timestamp="1590672174281">
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom" timestamp="1590679898942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1488" height="121" key="GridCell.Tab.0.bottom/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590360415023" />
     <state width="937" height="119" key="GridCell.Tab.0.bottom/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590672174281" />
-    <state width="1493" height="111" key="GridCell.Tab.0.center" timestamp="1590672174281">
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590679898942" />
+    <state width="1493" height="111" key="GridCell.Tab.0.center" timestamp="1590679898942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1488" height="121" key="GridCell.Tab.0.center/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590360415023" />
     <state width="937" height="119" key="GridCell.Tab.0.center/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590672174281" />
-    <state width="1493" height="111" key="GridCell.Tab.0.left" timestamp="1590672174281">
+    <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590679898942" />
+    <state width="1493" height="111" key="GridCell.Tab.0.left" timestamp="1590679898941">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1488" height="121" key="GridCell.Tab.0.left/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590360415022" />
     <state width="937" height="119" key="GridCell.Tab.0.left/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590672174281" />
-    <state width="1493" height="111" key="GridCell.Tab.0.right" timestamp="1590672174281">
+    <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590679898941" />
+    <state width="1493" height="111" key="GridCell.Tab.0.right" timestamp="1590679898942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1488" height="121" key="GridCell.Tab.0.right/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590360415023" />
     <state width="937" height="119" key="GridCell.Tab.0.right/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590672174281" />
+    <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590679898942" />
     <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1590091714294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -491,10 +496,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1590672478445" />
-    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590058711563">
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590676291410">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590058711563" />
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1590676291410" />
     <state x="619" y="141" width="371" height="526" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1590264509439">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
