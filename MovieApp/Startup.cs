@@ -15,6 +15,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using MovieApp.Models;
 using MovieApp.Services;
+using MongoDB.Bson;
+using AspNetCore.Identity.MongoDbCore.Infrastructure;
+using AspNetCore.Identity.MongoDbCore.Extensions;
 
 namespace MovieApp
 {
@@ -40,9 +43,45 @@ namespace MovieApp
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+            //services.AddIdentity<User, Role>()
+            //    .AddMongoDbStores<User, Role, ObjectId>
+            //    (
+            //        "mongodb+srv://pdesic17:Pass.123@movieprojectcluster-zbe8i.mongodb.net/test?retryWrites=true&w=majority",
+            //        "MovieAppDB"
+            //    )
+            //    .AddDefaultTokenProviders();
+
+            var mongoDbIdentityConfiguration = new MongoDbIdentityConfiguration
+            {
+                MongoDbSettings = new MongoDbSettings
+                {
+                    ConnectionString = "mongodb+srv://pdesic17:Pass.123@movieprojectcluster-zbe8i.mongodb.net/test?retryWrites=true&w=majority",
+                    DatabaseName = "MovieAppDB"
+                },
+                IdentityOptionsAction = options =>
+                {
+                    options.Password.RequireDigit = false;
+                    options.Password.RequiredLength = 6;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequireLowercase = false;
+
+                    // ApplicationUser settings
+                    options.User.RequireUniqueEmail = true;
+                    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@.-_";
+                }
+            };
+
+            services.ConfigureMongoDbIdentity<User, Role, ObjectId>(mongoDbIdentityConfiguration);
+
+
+
             services.AddControllersWithViews();
+
             services.AddRazorPages();
 
             

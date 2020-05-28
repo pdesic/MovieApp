@@ -20,7 +20,7 @@ namespace MovieApp.Models
         [DataType(DataType.Date)]
         [Display(Name = "Release date")]
         public string ReleaseDate { get; set; }
-        [Required]
+        //[Required]
         public string[] Genre { get; set; }
         [Display(Name = "Youtube url trailer")]
         [Required]
@@ -28,5 +28,7 @@ namespace MovieApp.Models
         public string MovieTrailerUrl { get; set; }
         [Display(Name = "Import movie image")]
         public string ImagePath { get; set; }
+        [Display(Name = "Description")]
+        public string Plot { get; set; }
     }
 }

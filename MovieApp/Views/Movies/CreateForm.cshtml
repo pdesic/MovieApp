@@ -45,6 +45,11 @@
 
                     </div>
                     <div class="form-group">
+                        <label asp-for="Movie.Plot"></label>
+                        <input class="form-control" asp-for="Movie.Plot">
+                        <span asp-validation-for="Movie.Plot" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
                         <label asp-for="Movie.MovieTrailerUrl"></label>
                         <input class="form-control" asp-for="Movie.MovieTrailerUrl" placeholder="Example: https://www.youtube.com/watch?v=VyHV0BRtdxo">
                         <span asp-validation-for="Movie.MovieTrailerUrl" class="text-danger"></span>
