@@ -149,7 +149,7 @@ namespace MovieApp.Controllers
             }
             else
             {
-                movie.ImagePath = updateMovie.Id;
+                movie.ImagePath = updateMovie.ImagePath;
             }
 
             
