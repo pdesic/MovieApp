@@ -119,6 +119,9 @@ namespace MovieApp.Controllers
             
                 return View("CreateForm", viewModel);
             }
+
+            movie.Rating = Array.Empty<int>();
+            movie.UsersThatRatedMovie = Array.Empty<string>();
             
             _movieService.Create(movie);
 
