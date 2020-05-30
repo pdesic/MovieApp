@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -35,5 +36,9 @@ namespace MovieApp.Models
 
         [Display(Name = "Description")]
         public string Plot { get; set; }
+        [AllowNull]
+        public int[] Rating { get; set; }
+        [AllowNull]
+        public string[] UsersThatRatedMovie { get; set; }
     }
 }

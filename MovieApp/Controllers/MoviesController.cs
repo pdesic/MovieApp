@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MovieApp.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
 
 namespace MovieApp.Controllers
 {
@@ -20,11 +22,16 @@ namespace MovieApp.Controllers
     {
         private readonly MovieService _movieService;
         private readonly GenreService _genreService;
+        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
 
-        public MoviesController(MovieService movieService, GenreService genreService)
+        public MoviesController(MovieService movieService, GenreService genreService, SignInManager<User> signInManager, UserManager<User> userManager)
         {
             _movieService = movieService;
             _genreService = genreService;
+            _signInManager = signInManager;
+            _userManager = userManager;
+
         }
 
         [HttpGet]
@@ -172,7 +179,6 @@ namespace MovieApp.Controllers
         }
 
 
-
         [HttpPost]        
         [ValidateAntiForgeryToken]
         public ActionResult<Movie> Delete(string id)
@@ -187,6 +193,47 @@ namespace MovieApp.Controllers
             _movieService.Remove(id);
 
             return RedirectToAction("Index", "Movies");
+        }
+
+
+        [HttpPost]
+        public ActionResult Rate(string id)
+        {
+            var getMovie = _movieService.Get(id);
+
+            var user = _userManager.GetUserAsync(User);
+
+            string userId = user.Result.Id.ToString();
+
+            if (!getMovie.UsersThatRatedMovie.Contains(userId))
+            {
+                if (getMovie == null)
+                {
+                    return NotFound();
+                }
+
+                var userThatRated = getMovie.UsersThatRatedMovie.Append(userId);
+
+                var usersRating = getMovie.Rating.Append(Int32.Parse(Request.Form["rating"]));
+
+                getMovie.Rating = usersRating.ToArray();
+
+                getMovie.UsersThatRatedMovie = userThatRated.ToArray();
+
+                _movieService.Update(id, getMovie);
+
+                return RedirectToAction("Details", "Movies", new { id });
+            }
+            
+            int index = Array.IndexOf(getMovie.UsersThatRatedMovie, userId);
+
+            getMovie.Rating[index] = Int32.Parse(Request.Form["rating"]);
+
+            _movieService.Update(id, getMovie);
+
+            return RedirectToAction("Details", "Movies", new { id });
+
+
         }
     }
 }
