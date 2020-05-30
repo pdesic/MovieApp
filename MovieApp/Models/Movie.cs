@@ -36,10 +36,10 @@ namespace MovieApp.Models
 
         [Display(Name = "Description")]
         public string Plot { get; set; }
-        [AllowNull]
+ 
         [Range(1,10)]
         public int[] Rating { get; set; }
-        [AllowNull]
+        
         public string[] UsersThatRatedMovie { get; set; }
     }
 }
