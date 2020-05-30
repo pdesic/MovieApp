@@ -19,6 +19,8 @@ namespace MovieApp.Models
         //public string Password { get; set; }
         //public string Email { get; set; }
 
+
+        public bool isAdmin { get; set; }
         public User() : base()
         {
         }

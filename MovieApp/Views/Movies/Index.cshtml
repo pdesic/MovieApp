@@ -1,4 +1,11 @@
-﻿@model IEnumerable<MovieApp.Models.Movie>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@model IEnumerable<MovieApp.Models.Movie>
+
+@{ var user = UserManager.GetUserAsync(User);}
+
 
 @{
     Layout = "_Layout";
@@ -6,6 +13,7 @@
 
 @section Style
 {
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css"/>
     
@@ -20,10 +28,15 @@
 <div class="container">
     <div class="d-flex align-items-center">
         <h1 class="mb-4">Movie catalog</h1>
-        <a class="btn btn-primary ml-auto" asp-area="" asp-controller="Movies" asp-action="CreateForm">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            Add new movie
-        </a>
+        
+            @if (SignInManager.IsSignedIn(User) && user.Result.isAdmin)
+            {
+                <a class="btn btn-primary ml-auto" asp-area="" asp-controller="Movies" asp-action="CreateForm">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Add new movie
+                </a>
+            }
+
     </div>
 
 
@@ -48,11 +61,25 @@
     
     <script>
     
+        let isAdmin;
+    
         function template(data) {
 
             let $div = $('<div>');
         
             data.forEach((data) => {
+                
+                let buttons = `
+                     <div class="d-flex justify-content-between">
+                         <a href="/Movies/UpdateForm/${data.id}" class="btn btn-outline-secondary">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            Edit
+                        </a>
+                         <button id="delete-movie" data-delete_movie_url="/api/Movies/${data.id}" class="btn btn-danger">Delete</button>
+                    </div>
+                `;
+                
+                
                 $div.append(`
                     <div id="movie-card" class="col-sm-6 col-md-4 col-lg-3">
                         <div class="card mb-4 box-shadow">
@@ -71,13 +98,8 @@
                                         ${data.name}
                                     </a>
                                 </p>
-                                <div class="d-flex justify-content-between">
-                                     <a href="/Movies/UpdateForm/${data.id}" class="btn btn-outline-secondary">
-                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                        Edit
-                                    </a>
-                                     <button id="delete-movie" data-delete_movie_url="/api/Movies/${data.id}" class="btn btn-danger">Delete</button>
-                                </div>
+                                
+                                ${isAdmin ? buttons : ''}
 
                             </div>
                         </div>
@@ -97,13 +119,16 @@
             
             
             
+            
             $('#pagination-container').pagination({
                 dataSource: function(done) {
                     $.ajax({
                             type: 'GET',
                             url: $('#movie-catalog').data('url'),
                             success: function(response) {
-                                done(response);
+                                isAdmin = response.isAdmin;
+                                // console.log(response);
+                                done(response.movies);
                             }
                         });
                 },
