@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Cors;
 using System;
 using System.Net.Http;
 using System.Net;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace MovieApp.Controllers.Api
 {
@@ -14,88 +17,40 @@ namespace MovieApp.Controllers.Api
     public class MoviesController : Controller
     {
         private readonly MovieService _movieService;
+        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
 
-        public MoviesController(MovieService movieService)
+
+        public MoviesController(MovieService movieService, SignInManager<User> signInManager, UserManager<User> userManager)
         {
             _movieService = movieService;
+            _signInManager = signInManager;
+            _userManager = userManager;
+
         }
 
         [HttpGet]
-        public ActionResult<List<Movie>> Get() =>
-            _movieService.Get();
+        public Object Get()
+        {
+            var user = _userManager.GetUserAsync(User);
+            
+            
+            if (_signInManager.IsSignedIn(User))
+            {
+                return new
+                {
+                    movies = _movieService.Get(),
+                    isAdmin = user.Result.isAdmin
+                };
+            }
+            
+            return new
+            {
+                movies = _movieService.Get(),
+                isAdmin = false
+            };
+        }
 
-        //[HttpGet("{id:length(24)}", Name = "GetMovie")]
-        //public ActionResult<Movie> Get(string id)
-        //{
-        //    var movie = _movieService.Get(id);
-
-        //    if (movie == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return movie;
-        //}
-
-        //[HttpPost]
-        //public ActionResult<Movie> Create(Movie movie)
-        //{
-        //    _movieService.Create(movie);
-
-        //    return CreatedAtRoute("GetMovie", new { id = movie.Id.ToString() }, movie);
-        //}
-
-        //[HttpPut("{id:length(24)}")]
-        //public IActionResult Update(string id, Movie movieIn)
-        //{
-        //    var movie = _movieService.Get(id);
-
-        //    if (movie == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _movieService.Update(id, movieIn);
-
-        //    return NoContent();
-        //}
-
-
-        // [HttpGet("{id:length(24)}", Name = "GetMovie")]
-        // public ActionResult<Movie> Get(string id)
-        // {
-        //     var movie = _movieService.Get(id);
-        //
-        //     if (movie == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //
-        //     return movie;
-        // }
-        //
-        // [HttpPost]
-        // public ActionResult<Movie> Create(Movie movie)
-        // {
-        //     _movieService.Create(movie);
-        //
-        //     return CreatedAtRoute("GetMovie", new { id = movie.Id.ToString() }, movie);
-        // }
-        //
-        // [HttpPut("{id:length(24)}")]
-        // public IActionResult Update(string id, Movie movieIn)
-        // {
-        //     var movie = _movieService.Get(id);
-        //
-        //     if (movie == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //
-        //     _movieService.Update(id, movieIn);
-        //
-        //     return NoContent();
-        // }
 
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
