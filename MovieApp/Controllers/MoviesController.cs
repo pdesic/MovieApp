@@ -156,7 +156,10 @@ namespace MovieApp.Controllers
             }
             else
             {
+                //TODO this should not be here
                 movie.ImagePath = updateMovie.ImagePath;
+                movie.Rating = updateMovie.Rating;
+                movie.UsersThatRatedMovie = updateMovie.UsersThatRatedMovie;
             }
 
             
