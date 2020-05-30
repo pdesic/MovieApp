@@ -99,10 +99,11 @@
           </e>
           <e p="favicon.ico" t="Include" />
           <e p="images" t="Include">
-            <e p="07e45598-a12c-41e0-ae15-99d5002813c9_dracula-art_43623-421.jpg" t="Include" />
             <e p="4fa2b590-eb93-4e20-9861-11901a80f4bb_woman-in-black-jacket-driving-car-4319664.jpg" t="Include" />
             <e p="7b790c0a-a25f-4290-9506-e8d11199c650_TheWolfOfWallStreet1.jpg" t="Include" />
             <e p="85603496-dbe0-453a-b18c-1f79e67017dc_frog.jpg" t="Include" />
+            <e p="937e8c4d-f57f-4764-96f8-98a499dbec09_7b790c0a-a25f-4290-9506-e8d11199c650_TheWolfOfWallStreet1.jpg" t="Include" />
+            <e p="d9d0a9a6-8e13-4ffa-8a47-21429fdb98aa_TheWolfOfWallStreet1.jpg" t="Include" />
             <e p="pepe-dracula.jpg" t="Include" />
           </e>
           <e p="js" t="Include">

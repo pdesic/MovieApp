@@ -25,9 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69ea831c-798d-4767-aad9-546c681633a4" name="Default Changelist" comment="Bug after editing movies">
+    <list default="true" id="69ea831c-798d-4767-aad9-546c681633a4" name="Default Changelist" comment="nothing">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Views/Movies/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/Views/Movies/Details.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +116,6 @@
         <option value="$PROJECT_DIR$/MovieApp/Views/Account/Register.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Movies/CreateForm.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Movies/UpdateForm.cshtml" />
-        <option value="$PROJECT_DIR$/MovieApp/Views/Movies/Details.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Models/Movie.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Controllers/OMDBMovies.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Controllers/OMDBMoviesController.cs" />
@@ -130,6 +130,7 @@
         <option value="$PROJECT_DIR$/MovieApp/Controllers/Api/MoviesController.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Movies/Index.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" />
+        <option value="$PROJECT_DIR$/MovieApp/Views/Movies/Details.cshtml" />
       </list>
     </option>
   </component>
@@ -204,7 +205,7 @@
       <workItem from="1590426157555" duration="3501000" />
       <workItem from="1590664801228" duration="7960000" />
       <workItem from="1590672830937" duration="10530000" />
-      <workItem from="1590764692480" duration="22458000" />
+      <workItem from="1590764692480" duration="25721000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589870394498</created>
@@ -325,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590856915670</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="nothing">
+      <created>1590863746863</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1590863746863</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,10 +381,10 @@
     <MESSAGE value="Front end ajax delete and get movies" />
     <MESSAGE value="aa" />
     <MESSAGE value="Delete movies through api" />
-    <MESSAGE value="nothing" />
     <MESSAGE value="Load data through omdbapi" />
     <MESSAGE value="Bug after editing movies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug after editing movies" />
+    <MESSAGE value="nothing" />
+    <option name="LAST_COMMIT_MESSAGE" value="nothing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="0" width="701" height="824" key="#MovieApp" timestamp="1590767789871">
@@ -404,30 +412,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1590266336522" />
-    <state width="1493" height="111" key="GridCell.Tab.0.bottom" timestamp="1590767793218">
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom" timestamp="1590863773281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590767793218" />
     <state width="937" height="119" key="GridCell.Tab.0.bottom/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590754761290" />
-    <state width="1493" height="111" key="GridCell.Tab.0.center" timestamp="1590767793218">
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590863773281" />
+    <state width="1493" height="111" key="GridCell.Tab.0.center" timestamp="1590863773280">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590767793218" />
     <state width="937" height="119" key="GridCell.Tab.0.center/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590754761290" />
-    <state width="1493" height="111" key="GridCell.Tab.0.left" timestamp="1590767793218">
+    <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590863773280" />
+    <state width="1493" height="111" key="GridCell.Tab.0.left" timestamp="1590863773280">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590767793218" />
     <state width="937" height="119" key="GridCell.Tab.0.left/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590754761290" />
-    <state width="1493" height="111" key="GridCell.Tab.0.right" timestamp="1590767793218">
+    <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590863773280" />
+    <state width="1493" height="111" key="GridCell.Tab.0.right" timestamp="1590863773281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590767793218" />
     <state width="937" height="119" key="GridCell.Tab.0.right/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590754761290" />
+    <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590863773281" />
     <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1590091714294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -562,11 +570,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="439" y="126" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1590265037489" />
-    <state x="500" y="201" key="git4idea.merge.GitPullDialog" timestamp="1590664837657">
+    <state x="500" y="201" key="git4idea.merge.GitPullDialog" timestamp="1590863770347">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="627" y="-826" key="git4idea.merge.GitPullDialog/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429626078" />
-    <state x="500" y="201" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1590664837657" />
+    <state x="500" y="201" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1590863770347" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1590061286979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
