@@ -25,10 +25,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69ea831c-798d-4767-aad9-546c681633a4" name="Default Changelist" comment="add rating stars">
+    <list default="true" id="69ea831c-798d-4767-aad9-546c681633a4" name="Default Changelist" comment="bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApp/Views/Movies/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/Views/Movies/Details.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieApp/Views/Movies/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/Views/Movies/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,7 +205,7 @@
       <workItem from="1590426157555" duration="3501000" />
       <workItem from="1590664801228" duration="7960000" />
       <workItem from="1590672830937" duration="10530000" />
-      <workItem from="1590764692480" duration="26725000" />
+      <workItem from="1590764692480" duration="27943000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589870394498</created>
@@ -342,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590867022809</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="bug fixed">
+      <created>1590868091727</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1590868091727</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +399,8 @@
     <MESSAGE value="Bug after editing movies" />
     <MESSAGE value="nothing" />
     <MESSAGE value="add rating stars" />
-    <option name="LAST_COMMIT_MESSAGE" value="add rating stars" />
+    <MESSAGE value="bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="0" width="701" height="824" key="#MovieApp" timestamp="1590767789871">
@@ -551,12 +557,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="481" y="155" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.824@0.0.1536.824" timestamp="1590088808660" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590856925511">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590868098652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590360345157" />
     <state x="453" y="-897" key="Vcs.Push.Dialog.v2/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429607896" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590856925511" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590868098652" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1590672478445">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
