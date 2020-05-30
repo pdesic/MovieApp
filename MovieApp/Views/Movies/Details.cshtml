@@ -87,7 +87,7 @@
         <div class="row">
             <form asp-controller="Movies" asp-action="Rate" asp-route-id="@Model.Id" method="post" class="d-flex align-items-center">
                 <div class="rating">
-                      @for (int i = 1; i < 11; i++)
+                      @for (int i = 10; i > 0; i--)
                       {
                           <input type="radio" id="star_@i" name="rating" value="@i"/><label for="star_@i" title="Sucks big time">@i star</label>
                       }
