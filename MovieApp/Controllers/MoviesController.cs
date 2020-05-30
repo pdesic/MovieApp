@@ -51,7 +51,7 @@ namespace MovieApp.Controllers
             {
                 Genre = _genreService.GetFirst(),
                 Movie = new Movie()
-            };    
+            };
 
             return View(viewModel);
         }
