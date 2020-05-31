@@ -20,7 +20,7 @@ namespace MovieApp.Services
         }
 
         public List<Movie> Get() =>
-            _movies.Find(movie => true).ToList();
+            _movies.Find(movie => true).SortBy(x => x.Id).ThenByDescending(x => x.Id).ToList();
 
         public Movie Get(string id) =>
             _movies.Find<Movie>(movie => movie.Id == id).FirstOrDefault();
