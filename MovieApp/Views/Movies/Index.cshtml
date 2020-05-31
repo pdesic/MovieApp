@@ -1,0 +1,202 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@model IEnumerable<MovieApp.Models.Movie>
+
+@{ var user = UserManager.GetUserAsync(User);}
+
+
+@{
+    Layout = "_Layout";
+}
+
+@section Style
+{
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css"/>
+    
+    <style>
+        .link:hover{
+            font-weight:bold;
+        }
+    </style>
+}
+
+
+<div class="container">
+    <div class="d-flex align-items-center">
+        <h1 class="mb-4">Movie catalog</h1>
+        
+            @if (SignInManager.IsSignedIn(User) && user.Result.isAdmin)
+            {
+                <a class="btn btn-primary ml-auto" asp-area="" asp-controller="Movies" asp-action="CreateForm">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Add new movie
+                </a>
+            }
+
+    </div>
+
+
+    <div id="movie-catalog" data-url="@Url.Action("Get", "Movies")" class="row">
+
+        <div class="m-auto my-4">
+            <div class="spinner-border my-5" style="width: 5rem; height: 5rem;    " role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="pagination-container"></div>
+</div>
+
+
+@section Scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+    
+    <script>
+    
+        let isAdmin;
+    
+        function template(data) {
+
+            let $div = $('<div>');
+        
+            data.forEach((data) => {
+                console.log(data)
+                let buttons = `
+                     <div class="d-flex justify-content-between">
+                         <a href="/Movies/UpdateForm/${data.id}" class="btn btn-outline-secondary">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            Edit
+                        </a>
+                         <button id="delete-movie" data-delete_movie_url="/api/Movies/${data.id}" class="btn btn-danger">Delete</button>
+                    </div>
+                `;
+                
+                
+                $div.append(`
+                    <div id="movie-card" class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block; object-fit: cover;" src="/images/${data.imagePath}" data-holder-rendered="true">
+                            <div class="card-body">
+
+
+                                <span class="d-flex align-items-center">
+                                    <svg width="18" height="18" style="color: rgb(245,197,24)" class="" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
+                                    <span class="ml-2">${data.rating ? (data.rating.reduce((a, b) => a + b, 0)/data.usersThatRatedMovie.length).toFixed(1) : 0}</span>
+                                </span>
+
+
+                                <p class="card-text">
+                                    <a class="text-dark text-decoration-none link" href="/Movies/Details/${data.id}">
+                                        ${data.name}
+                                    </a>
+                                </p>
+                                
+                                ${isAdmin ? buttons : ''}
+
+                            </div>
+                        </div>
+                    </div>
+                `)
+            })
+            
+                       
+            
+            return $div.children();
+        }
+        
+        
+        
+    
+        $(document).ready(function() {
+            
+            
+            
+            
+            $('#pagination-container').pagination({
+                dataSource: function(done) {
+                    $.ajax({
+                            type: 'GET',
+                            url: $('#movie-catalog').data('url'),
+                            success: function(response) {
+                                isAdmin = response.isAdmin;
+                                // console.log(response);
+                                done(response.movies);
+                            }
+                        });
+                },
+                pageSize: 8,
+                callback: function(data, pagination) {
+                    let html = template(data);
+                    $('#movie-catalog').html(html);
+                }
+            })
+            
+            
+       
+            
+            
+            $('#movie-catalog').on('click', '#delete-movie', function(event) {
+                
+                let $thisCard = $(this).closest('#movie-card');
+                
+                
+                Swal.fire({
+                  title: 'Are you sure?',
+                  text: "You won't be able to revert this!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                  if (result.value) {
+                      
+                      $.ajax({
+                            method: "DELETE",
+                            url: $(this).data('delete_movie_url')
+                        })
+                        .done(function(response) {
+                              console.log(response.code);
+                             if(response.code === 200) {
+                                
+                                $thisCard.remove();                 
+                                Swal.fire(
+                                 'Deleted!',
+                                 'Your file has been deleted.',
+                                 'success'
+                                )    
+                                return;
+                             }
+                             
+                              Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!'
+                              })
+                                                
+                        })
+                        .catch(function() {
+                          Swal.fire({
+                              icon: 'error',
+                              title: 'Oops...',
+                              text: 'Something went wrong!'
+                            })
+                        });
+                     
+                  }
+                })
+            })
+        })
+        
+        
+        
+    </script>
+}

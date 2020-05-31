@@ -1,0 +1,94 @@
+﻿@model MovieApp.ViewModels.MovieFormViewModel
+@{
+    Layout = "_Layout";
+}
+
+@section Style
+{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+    <style>
+        .select2 {
+            width: 100%!important;
+        }
+        
+    </style>
+}
+<div class="row">
+    <div class="col-lg-8 offset-lg-2 col-12">
+        <div class="card mt-5">
+            <div class="card-header">
+                Update new movie
+            </div>
+            <div class="card-body">
+                <form asp-controller="Movies" asp-action="Update" asp-route-id="@Model.Movie.Id" method="post" enctype="multipart/form-data">
+                    <input class="form-control" type="hidden" asp-for="Movie.Id">
+
+
+                    <div class="form-group">
+                        <label asp-for="Movie.Name"></label>
+                        <input class="form-control" asp-for="Movie.Name">
+                        <span asp-validation-for="Movie.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Movie.ReleaseDate"></label>
+                        <input class="flatpickr flatpickr-input form-control" asp-for="Movie.ReleaseDate" style="background-color:#fff;">
+                        <span asp-validation-for="Movie.ReleaseDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Select genre</label>
+                        <select asp-for="Movie.Genre" class="form-control select-genre" multiple="multiple">
+                            @foreach (var genre in @Model.Genre.Genres)
+                            {
+                                <option value="@genre">@genre</option>
+                            }
+                        </select>
+                        <span asp-validation-for="Movie.Genre" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Movie.Plot"></label>
+                        <textarea class="form-control" asp-for="Movie.Plot"></textarea>
+                        <span asp-validation-for="Movie.Plot" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Movie.MovieTrailerUrl"></label>
+                        <input class="form-control" asp-for="Movie.MovieTrailerUrl" placeholder="Example: https://www.youtube.com/watch?v=VyHV0BRtdxo">
+                        <span asp-validation-for="Movie.MovieTrailerUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Movie.ImagePath"></label>
+                        <input name="image" type="file" class="form-control-file">
+                        <span asp-validation-for="Movie.ImagePath" class="text-danger"></span>
+                    </div>
+
+                    <button class="btn btn-success">Update movie</button>
+                    <a class="btn btn-info" asp-controller="Movies" asp-action="Index">Cancel</a>
+
+
+                    <input name="__RequestVerificationToken" type="hidden" value="">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+@section Scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".flatpickr").flatpickr();
+
+            $('.select-genre').select2();
+        });
+    </script>
+}
