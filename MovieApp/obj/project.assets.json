@@ -8157,25 +8157,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pavle\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Marko\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WebApp\\SolMovieApp\\MovieApp\\MovieApp.csproj",
+      "projectUniqueName": "C:\\Users\\Marko\\source\\repos\\6-Semestar\\MovieApp\\MovieApp\\MovieApp\\MovieApp.csproj",
       "projectName": "MovieApp",
-      "projectPath": "D:\\WebApp\\SolMovieApp\\MovieApp\\MovieApp.csproj",
-      "packagesPath": "C:\\Users\\Pavle\\.nuget\\packages\\",
-      "outputPath": "D:\\WebApp\\SolMovieApp\\MovieApp\\obj\\",
+      "projectPath": "C:\\Users\\Marko\\source\\repos\\6-Semestar\\MovieApp\\MovieApp\\MovieApp\\MovieApp.csproj",
+      "packagesPath": "C:\\Users\\Marko\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marko\\source\\repos\\6-Semestar\\MovieApp\\MovieApp\\MovieApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Pavle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Marko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
