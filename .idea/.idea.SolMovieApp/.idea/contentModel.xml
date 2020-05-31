@@ -16,7 +16,13 @@
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
+          <e p="Api" t="Include">
+            <e p="MoviesController.cs" t="Include" />
+          </e>
           <e p="HomeController.cs" t="Include" />
+          <e p="MoviesController.cs" t="Include" />
+          <e p="OMDBMoviesController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
           <e p="ApplicationDbContext.cs" t="Include" />
@@ -31,6 +37,7 @@
           <e p="Genre.cs" t="Include" />
           <e p="Movie.cs" t="Include" />
           <e p="MovieAppDBSettings.cs" t="Include" />
+          <e p="Role.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>
         <e p="MovieApp.csproj" t="IncludeRecursive" />
@@ -47,18 +54,39 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Services" t="Include">
+          <e p="GenreService.cs" t="Include" />
           <e p="MovieService.cs" t="Include" />
+          <e p="UserService.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="LoginViewModel.cs" t="Include" />
+          <e p="MovieFormViewModel.cs" t="Include" />
+          <e p="RegisterViewModel.cs" t="Include" />
+        </e>
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Account" t="Include">
+            <e p="Login.cshtml" t="Include" />
+            <e p="Register.cshtml" t="Include" />
+          </e>
           <e p="Home" t="Include">
+            <e p="About.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
-            <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="Movies" t="Include">
+            <e p="CreateForm.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+            <e p="UpdateForm.cshtml" t="Include" />
+          </e>
+          <e p="OMDBMovies" t="Include">
+            <e p="Index.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />
+            <e p="_LayoutHome.cshtml" t="Include" />
             <e p="_LoginPartial.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
@@ -66,14 +94,20 @@
         </e>
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
+            <e p="cover.css" t="Include" />
             <e p="site.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
           <e p="images" t="Include">
+            <e p="4fa2b590-eb93-4e20-9861-11901a80f4bb_woman-in-black-jacket-driving-car-4319664.jpg" t="Include" />
             <e p="58dbd7ef-26f3-4600-8af7-ea4f86920f51_pepe-dracula.jpg" t="Include" />
+            <e p="7b790c0a-a25f-4290-9506-e8d11199c650_TheWolfOfWallStreet1.jpg" t="Include" />
+            <e p="85603496-dbe0-453a-b18c-1f79e67017dc_frog.jpg" t="Include" />
+            <e p="937e8c4d-f57f-4764-96f8-98a499dbec09_7b790c0a-a25f-4290-9506-e8d11199c650_TheWolfOfWallStreet1.jpg" t="Include" />
             <e p="bd97efdb-0add-4992-a084-60a19a983287_TheGreenMile.jpg" t="Include" />
             <e p="c7c9ab22-0495-46ef-b0a3-c57d36943dd7_pepe-dracula.jpg" t="Include" />
             <e p="d9d0a9a6-8e13-4ffa-8a47-21429fdb98aa_TheWolfOfWallStreet1.jpg" t="Include" />
+            <e p="pepe-dracula.jpg" t="Include" />
           </e>
           <e p="js" t="Include">
             <e p="site.js" t="Include" />
