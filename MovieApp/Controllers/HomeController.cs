@@ -29,20 +29,6 @@ namespace MovieApp.Controllers
             return View();
         }
 
-        /*public IActionResult Index()
-        {
-            var movies = _movieService.Get();
-
-            return Json(movies);
-        }
-
-        private readonly MovieService _movieService;
-
-        public HomeController(MovieService movieService)
-        {
-            _movieService = movieService;
-        }*/
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -25,19 +25,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69ea831c-798d-4767-aad9-546c681633a4" name="Default Changelist" comment="fix bug number 2">
+    <list default="true" id="69ea831c-798d-4767-aad9-546c681633a4" name="Default Changelist" comment="merge">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SolMovieApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieApp/bin/Release/netcoreapp3.1/MovieApp.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/bin/Release/netcoreapp3.1/MovieApp.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieApp/bin/Release/netcoreapp3.1/MovieApp.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/bin/Release/netcoreapp3.1/MovieApp.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieApp/bin/Release/netcoreapp3.1/MovieApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/bin/Release/netcoreapp3.1/MovieApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieApp/bin/Release/netcoreapp3.1/MovieApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/bin/Release/netcoreapp3.1/MovieApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApp/obj/MovieApp.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/obj/MovieApp.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApp/obj/MovieApp.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/obj/MovieApp.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApp/obj/Release/netcoreapp3.1/MovieApp.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/obj/Release/netcoreapp3.1/MovieApp.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApp/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApp/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieApp/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MovieApp/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +84,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4A0E8814-DEB8-40F2-817A-211F96ECC092/24/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MovieApp/wwwroot/lib/jquery/dist/jquery.min.map" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -99,7 +96,6 @@
         <option value="$PROJECT_DIR$/MovieApp/Views/Movies/MovieForm.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Shared/_LayoutHome.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Views/_ViewStart.cshtml" />
-        <option value="$PROJECT_DIR$/MovieApp/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Services/GenreService.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Startup.cs" />
         <option value="$PROJECT_DIR$/MovieApp/ViewModels/MovieFormViewModel.cs" />
@@ -120,9 +116,10 @@
         <option value="$PROJECT_DIR$/MovieApp/Views/Home/Index.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Controllers/Api/MoviesController.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Models/Movie.cs" />
-        <option value="$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Movies/Details.cshtml" />
         <option value="$PROJECT_DIR$/MovieApp/Views/Movies/Index.cshtml" />
+        <option value="$PROJECT_DIR$/MovieApp/Controllers/MoviesController.cs" />
+        <option value="$PROJECT_DIR$/MovieApp/Controllers/HomeController.cs" />
       </list>
     </option>
   </component>
@@ -354,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590922154557</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="merge">
+      <created>1590922408140</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1590922408140</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,14 +413,15 @@
     <MESSAGE value="bug fixed" />
     <MESSAGE value="fix bug number 2" />
     <MESSAGE value="master merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="master merge" />
+    <MESSAGE value="merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="0" width="701" height="824" key="#MovieApp" timestamp="1590922321401">
+    <state x="424" y="0" width="701" height="824" key="#MovieApp" timestamp="1590922441230">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="424" y="0" width="701" height="824" key="#MovieApp/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590767789871" />
-    <state x="424" y="0" width="701" height="824" key="#MovieApp/0.0.1536.824@0.0.1536.824" timestamp="1590922321401" />
+    <state x="424" y="0" width="701" height="824" key="#MovieApp/0.0.1536.824@0.0.1536.824" timestamp="1590922441230" />
     <state x="576" y="201" key="#Web_Browsers" timestamp="1590061815190">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -437,30 +442,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1590266336522" />
-    <state width="1493" height="51" key="GridCell.Tab.0.bottom" timestamp="1590922327309">
+    <state width="1493" height="51" key="GridCell.Tab.0.bottom" timestamp="1590922445180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590767793218" />
     <state width="937" height="119" key="GridCell.Tab.0.bottom/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="51" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590922327309" />
-    <state width="1493" height="51" key="GridCell.Tab.0.center" timestamp="1590922327309">
+    <state width="1493" height="51" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590922445180" />
+    <state width="1493" height="51" key="GridCell.Tab.0.center" timestamp="1590922445180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590767793218" />
     <state width="937" height="119" key="GridCell.Tab.0.center/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="51" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590922327309" />
-    <state width="1493" height="51" key="GridCell.Tab.0.left" timestamp="1590922327308">
+    <state width="1493" height="51" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590922445180" />
+    <state width="1493" height="51" key="GridCell.Tab.0.left" timestamp="1590922445180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590767793218" />
     <state width="937" height="119" key="GridCell.Tab.0.left/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="51" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590922327308" />
-    <state width="1493" height="51" key="GridCell.Tab.0.right" timestamp="1590922327309">
+    <state width="1493" height="51" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590922445180" />
+    <state width="1493" height="51" key="GridCell.Tab.0.right" timestamp="1590922445180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824/2.-1080.1920.1040@0.0.1536.824" timestamp="1590767793218" />
     <state width="937" height="119" key="GridCell.Tab.0.right/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429601988" />
-    <state width="1493" height="51" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590922327309" />
+    <state width="1493" height="51" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590922445180" />
     <state width="1493" height="288" key="GridCell.Tab.1.bottom" timestamp="1590091714294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -595,11 +600,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="439" y="126" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1590265037489" />
-    <state x="500" y="201" key="git4idea.merge.GitPullDialog" timestamp="1590922178705">
+    <state x="500" y="201" key="git4idea.merge.GitPullDialog" timestamp="1590922423396">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="627" y="-826" key="git4idea.merge.GitPullDialog/0.0.1536.824/2.-1080.1920.1040@2.-1080.1920.1040" timestamp="1590429626078" />
-    <state x="500" y="201" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1590922178705" />
+    <state x="500" y="201" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1590922423396" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1590061286979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

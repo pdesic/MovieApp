@@ -161,9 +161,9 @@ namespace MovieApp.Controllers
             {
                 //TODO this should not be here
                 movie.ImagePath = updateMovie.ImagePath;
-                movie.Rating = updateMovie.Rating;
-                movie.UsersThatRatedMovie = updateMovie.UsersThatRatedMovie;
             }
+            
+            
 
             
             // Check if has any validation error
@@ -179,6 +179,8 @@ namespace MovieApp.Controllers
             }
             
             
+            movie.Rating = updateMovie.Rating;
+            movie.UsersThatRatedMovie = updateMovie.UsersThatRatedMovie;
             _movieService.Update(id, movie);
 
             return RedirectToAction("Index", "Movies");
