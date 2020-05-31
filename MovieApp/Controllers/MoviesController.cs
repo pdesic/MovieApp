@@ -119,7 +119,23 @@ namespace MovieApp.Controllers
             
                 return View("CreateForm", viewModel);
             }
-            
+
+            movie.Rating = Array.Empty<int>();
+            movie.UsersThatRatedMovie = Array.Empty<string>();
+
+            //var user = _userManager.GetUserAsync(User);
+
+            //string userId = user.Result.Id.ToString();
+
+            //var userThatRated = movie.UsersThatRatedMovie.Append(userId);
+
+            //var usersRating = movie.Rating.Append(0);
+
+            //movie.Rating = usersRating.ToArray();
+
+            //movie.UsersThatRatedMovie = userThatRated.ToArray();
+
+
             _movieService.Create(movie);
 
             return RedirectToAction("Index","Movies");

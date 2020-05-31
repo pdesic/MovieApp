@@ -41,5 +41,6 @@ namespace MovieApp.Models
         public int[] Rating { get; set; }
 
         public string[] UsersThatRatedMovie { get; set; }
+
     }
 }
